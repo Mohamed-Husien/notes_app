@@ -11,6 +11,7 @@ class NotesView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+              isScrollControlled: true, // to make bottom sheet auto scroll
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),

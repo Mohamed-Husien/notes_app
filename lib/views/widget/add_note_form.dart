@@ -52,11 +52,13 @@ class _AddNotaFormState extends State<AddNotaForm> {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
                 var noteModel = NoteModel(
+                    //الافضل اننا نعمل model كدا بدل منحطة جوة addNote mehtod
                     title: title!,
                     subTitle: subTitle!,
                     date: DateTime.now().toString(),
                     color: Colors.blue.value);
-                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                BlocProvider.of<AddNoteCubit>(context)
+                    .addNote(noteModel); //that is the trigger of add note cubit
               } else {
                 autovalidateMode = AutovalidateMode.always;
                 setState(() {});
